@@ -11,10 +11,6 @@ transmissionsetuser() {
     sudo sed -i 's/root/'"$USER"'/g' /usr/lib/systemd/system/transmission.service
 }
 
-copypicom() {
-    sudo cp /home/$USER/.config/work/backups/picom.conf /etc/xdg/picom.conf
-}
-
 finalize() {
     rm /home/$USER/.bash_logout
     rm /home/$USER/.bash_profile
@@ -33,9 +29,6 @@ mpduser
 
 # Set transmission user, change User to your username
 transmissionsetuser
-
-# Copy picom
-copypicom
 
 # Final script, delte and make directories.
 finalize
