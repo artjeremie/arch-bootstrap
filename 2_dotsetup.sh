@@ -13,7 +13,6 @@ gitbarerepo() {
 }
 
 gitclonerepo() {
-    mkdir -p $HOME/.config/dev
     cd $repodir
     echo arch-dwm arch-st arch-dmenu arch-dwmblocks arch-slock startpage | xargs -n1 |
         xargs -I{} git clone https://github.com/hoaxdream/{} && echo "\033[0;32mSuccessful"
