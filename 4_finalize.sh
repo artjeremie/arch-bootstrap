@@ -3,10 +3,6 @@
 # author: hoaxdream
 USER=$(whoami)
 
-mpduser() {
-    systemctl --user enable mpd
-}
-
 transmissionsetuser() {
     sudo sed -i 's/root/'"$USER"'/g' /usr/lib/systemd/system/transmission.service
 }
@@ -23,9 +19,6 @@ finalize() {
     mkdir -p /home/$USER/.config/dl/pics
     mkdir -p /home/$USER/.config/dl/docs
 }
-
-# Mpd user daemon
-mpduser
 
 # Set transmission user, change User to your username
 transmissionsetuser
